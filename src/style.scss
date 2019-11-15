@@ -1,17 +1,27 @@
+// @import '../src/assets/letter-o.png';
+// @import  '../src//assets/letter-x.jpg';
+
 .default-class {
-    border: 1px pink solid;
+    border: 1px grey solid;
     height: 150px;
     width: 150px;
+    
 }
 
 .class-O {
-    background-color: red;
+    background-image: url('../src/assets/letter-o.png');
+    background-position: center;
+    background-size: cover;
+    border: 1px grey solid;
     height: 150px;
     width: 150px;
 }
 
 .X-class {
-    background-color: blue;
+    background-image: url('../src//assets/letter-x.jpg');
+    background-position: center;
+    background-size: cover;
+    border: 1px grey solid;
     height: 150px;
     width: 150px;
 }

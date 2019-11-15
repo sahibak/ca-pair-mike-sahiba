@@ -30,7 +30,7 @@ export default class Game extends React.Component {
            let arrayOfResponses = this.state.values;
            if (!arrayOfResponses[i]){
                 return "default-class"
-           } else if (arrayOfResponses[i] = "X") {
+           } else if (arrayOfResponses[i] == "X") {
                 return "X-class"
             } else {
                 return "class-O"
@@ -44,27 +44,27 @@ export default class Game extends React.Component {
             <div className="game">
                 <div className="box-row">
                     <button onClick={(e)=> this.submitFunc(e, 0)} className = {this.displayFunc(0)}
-                    >test1</button>
+                    ></button>
                     <button onClick={(e)=> this.submitFunc(e, 1)} className = {this.displayFunc(1)}
-                    >test2</button>
+                    ></button>
                     <button name = "Q1" onClick={(e)=> this.submitFunc(e, 2)} className = {this.displayFunc(2)}
-                    >test3</button>
+                    ></button>
                 </div>
                 <div className="box-row">
                     <button onClick={(e)=> this.submitFunc(e, 3)} className = {this.displayFunc(3)}
-                    >test4</button>
+                    ></button>
                     <button onClick={(e)=> this.submitFunc(e, 4)} className = {this.displayFunc(4)}
-                    >test5</button>
+                    ></button>
                     <button name = "Q1" onClick={(e)=> this.submitFunc(e, 5)} className = {this.displayFunc(5)}
-                    >test6</button>
+                    ></button>
                 </div>
                 <div className="box-row">
                     <button onClick={(e)=> this.submitFunc(e, 6)} className = {this.displayFunc(6)}
-                    >test7</button>
+                    ></button>
                     <button onClick={(e)=> this.submitFunc(e, 7)} className = {this.displayFunc(7)}
-                    >test8</button>
+                    ></button>
                     <button name = "Q1" onClick={(e)=> this.submitFunc(e, 8)} className = {this.displayFunc(8)}
-                    >test9</button>
+                    ></button>
                 </div>
             </div>
           </>

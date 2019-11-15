@@ -32,41 +32,53 @@ export default class Game extends React.Component {
             return "class-O"
         }
     }
+
+    // winnerCheckFunc(){
+    //     let winningSolutions = [[0,1,2],[3,4,5],[6,7,8],[0,3,6],[1,4,7],[2,5,8],[0,4,8],[2,4,6]]
+    //     let listOfValues = this.state.values;
+    //     for (let i=0; i < winningSolutions.length; i++) {
+    //             const [a,b,c] = winningSolutions[i];
+    //             let valmatch1 = (listOfValues[a] == listOfValues[b] && listOfValues[a] && listOfValues[b])
+    //             let valmatch2 = (listOfValues[b] == listOfValues[c] && listOfValues[b] && listOfValues[c])
+    //             let result = (valmatch1 == valmatch2 && valmatch1 && valmatch2)
+    //             if (result) {
+    //                 alert("We have a WINNER!")
+    //                 return
+    //             } 
+    //             else if(this.state.counter == 9 ){
+    //                 alert("Match is Tied!")
+    //                 return
+    //             }
+    //     }
+    // }
     
     componentDidUpdate(_,prevState){
         let winningSolutions = [[0,1,2],[3,4,5],[6,7,8],[0,3,6],[1,4,7],[2,5,8],[0,4,8],[2,4,6]]
         let listOfValues = this.state.values;
+    
         for (let i=0; i < winningSolutions.length; i++) {
             const [a,b,c] = winningSolutions[i];
             let valmatch1 = (listOfValues[a] == listOfValues[b] && listOfValues[a] && listOfValues[b])
             let valmatch2 = (listOfValues[b] == listOfValues[c] && listOfValues[b] && listOfValues[c])
             let result = (valmatch1 == valmatch2 && valmatch1 && valmatch2);
             if (result) {
-                setTimeout(()=> {
-                    alert("We have a WINNER!");
-                    if(prevState.result == this.state.result) {
-                        this.setState({
-                            result: true
-                        })
-                    }
-                },200);
+                setTimeout(()=>alert("We have a WINNER!"),200);
+                return
             } 
             else if(this.state.counter == 9 ){
-                setTimeout(()=>alert("It is a DRAW!"),200);
+                alert("Match is Tied!")
                 return
             }
         }
     }
 
     render(){
-        if(this.state.result === true){
+        console.log("result",this.result)
+        if(this.result === true){
             return(
-                <>
-                <h1>Tick-Tack-Toe</h1>
                 <video width="320" height="240" autoPlay muted loop>
                     <source src="https://media.giphy.com/media/idFxmiV2dayJEqzXaW/giphy.mp4" type="video/mp4"></source>
                 </video>
-                </>
             )
         }
         return(

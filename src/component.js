@@ -83,7 +83,7 @@ export default class Game extends React.Component {
         }
         return(
             <>
-            <h1>Tick-Tack-Toe</h1>
+            <h1 className="title">Tick-Tack-Toe</h1>
            <div></div>
             <div className="game">
                 <div className="box-row">

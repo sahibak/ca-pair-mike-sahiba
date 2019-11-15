@@ -1,10 +1,17 @@
 // @import '../src/assets/letter-o.png';
 // @import  '../src//assets/letter-x.jpg';
 
+* {
+    margin: 0px;
+    background-color: beige;
+}
+
 .default-class {
-    border: 1px grey solid;
+    border: 3px grey solid;
+    border-radius: 10px;
     height: 150px;
     width: 150px;
+    background-color: white;
     
 }
 
@@ -12,22 +19,30 @@
     background-image: url('../src/assets/letter-o.png');
     background-position: center;
     background-size: cover;
-    border: 1px grey solid;
+    border: 3px grey solid;
     height: 150px;
     width: 150px;
+    border-radius: 10px;
 }
 
 .X-class {
     background-image: url('../src//assets/letter-x.jpg');
     background-position: center;
     background-size: cover;
-    border: 1px grey solid;
+    border: 3px grey solid;
     height: 150px;
     width: 150px;
+    border-radius: 10px;
 }
 
 .game {
     position: absolute;
     top: 22%;
-    left: 26%;
+    left: 34%;
+}
+
+.title {
+    margin-top: 60px;
+    text-align: center;
+    font-size: 60px;
 }

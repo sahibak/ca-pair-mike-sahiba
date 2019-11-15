@@ -10,33 +10,27 @@ export default class Game extends React.Component {
   
 
    submitFunc(event,n){ 
-       event.preventDefault();    
+        event.preventDefault();    
         let list = this.state.values;
         let display = this.state.nextStep?"X":"O";
-        console.log(display);
         list[n] = display;
-        let newlist= list
-        console.log("original",list);
-        console.log("newList",newlist)
            this.setState({
                counter: this.state.counter + 1,
                nextStep: !this.state.nextStep,
-               values: newlist
+               values: list
            })
-           console.log(this.state)
        }
 
-       displayFunc(i){
-           let arrayOfResponses = this.state.values;
-           if (!arrayOfResponses[i]){
-                return "default-class"
-           } else if (arrayOfResponses[i] = "X") {
-                return "X-class"
-            } else {
-                return "class-O"
-            }}
-
-
+    displayFunc(i){
+    let arrayOfResponses = this.state.values;
+        if (!arrayOfResponses[i]){
+            return "default-class"
+        } else if (arrayOfResponses[i] == "X") {
+            return "X-class"
+        } else {
+            return "class-O"
+        }
+    }
 
     render(){
         return(
@@ -50,6 +44,5 @@ export default class Game extends React.Component {
             <button name = "Q1" onClick={(e)=> this.submitFunc(e, 3)} className = {this.displayFunc(4)}>test3</button>
           </>
         )
-
     }
 }

@@ -65,3 +65,13 @@
     align-items: center;
     justify-content: center;
 }
+
+.video {
+    object-fit: cover;
+    // width: 100%;
+    position: absolute;
+    top: 22%;
+    height: 500px;
+    left: 34%;
+    border-radius: 5px;
+}

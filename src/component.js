@@ -76,9 +76,13 @@ export default class Game extends React.Component {
         console.log("result",this.result)
         if(this.result === true){
             return(
-                <video width="320" height="240" autoPlay muted loop>
-                    <source src="https://media.giphy.com/media/idFxmiV2dayJEqzXaW/giphy.mp4" type="video/mp4"></source>
+                <>
+                <iframe width="0" height="0" src="https://www.youtube.com/embed/skVg5FlVKS0?autoplay=1" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                <h1 className="title">Tick-Tack-Toe</h1>
+                <video className="video" width="500" height="500" autoPlay muted loop>
+                    <source className="video" src="https://media.giphy.com/media/idFxmiV2dayJEqzXaW/giphy.mp4" type="video/mp4"></source>
                 </video>
+                </>
             )
         }
         return(

@@ -32,25 +32,6 @@ export default class Game extends React.Component {
             return "class-O"
         }
     }
-
-    // winnerCheckFunc(){
-    //     let winningSolutions = [[0,1,2],[3,4,5],[6,7,8],[0,3,6],[1,4,7],[2,5,8],[0,4,8],[2,4,6]]
-    //     let listOfValues = this.state.values;
-    //     for (let i=0; i < winningSolutions.length; i++) {
-    //             const [a,b,c] = winningSolutions[i];
-    //             let valmatch1 = (listOfValues[a] == listOfValues[b] && listOfValues[a] && listOfValues[b])
-    //             let valmatch2 = (listOfValues[b] == listOfValues[c] && listOfValues[b] && listOfValues[c])
-    //             let result = (valmatch1 == valmatch2 && valmatch1 && valmatch2)
-    //             if (result) {
-    //                 alert("We have a WINNER!")
-    //                 return
-    //             } 
-    //             else if(this.state.counter == 9 ){
-    //                 alert("Match is Tied!")
-    //                 return
-    //             }
-    //     }
-    // }
     
     componentDidUpdate(_,prevState){
         let winningSolutions = [[0,1,2],[3,4,5],[6,7,8],[0,3,6],[1,4,7],[2,5,8],[0,4,8],[2,4,6]]
@@ -61,15 +42,14 @@ export default class Game extends React.Component {
             let valmatch2 = (listOfValues[b] == listOfValues[c] && listOfValues[b] && listOfValues[c])
             let result = (valmatch1 == valmatch2 && valmatch1 && valmatch2);
             if (result) {
-                setTimeout(()=>alert("We have a WINNER!"),200);
-                console.log("prev", prevState)
-                console.log("current",this.state)
-                if(prevState.result == this.state.result) {
-                    console.log("updating")
-                    this.setState({
-                        result: true
-                    })
-                }
+                setTimeout(()=> {
+                    alert("We have a WINNER!");
+                    if(prevState.result == this.state.result) {
+                        this.setState({
+                            result: true
+                        })
+                    }
+                },200);
             } 
             else if(this.state.counter == 9 ){
                 setTimeout(()=>alert("It is a DRAW!"),200);

@@ -61,12 +61,13 @@ export default class Game extends React.Component {
             let valmatch1 = (listOfValues[a] == listOfValues[b] && listOfValues[a] && listOfValues[b])
             let valmatch2 = (listOfValues[b] == listOfValues[c] && listOfValues[b] && listOfValues[c])
             let result = (valmatch1 == valmatch2 && valmatch1 && valmatch2);
+            console.log(result)
             if (result) {
                 setTimeout(()=>alert("We have a WINNER!"),200);
                 return
             } 
-            else if(this.state.counter == 9 ){
-                alert("Match is Tied!")
+            else if(this.state.counter === 9){
+                setTimeout(()=>alert("It is a DRAW!"),200);
                 return
             }
         }
@@ -74,7 +75,7 @@ export default class Game extends React.Component {
 
     render(){
         console.log("result",this.result)
-        if(this.result === true){
+        if(this.state.result === true){
             return(
                 <>
                 <iframe width="0" height="0" src="https://www.youtube.com/embed/skVg5FlVKS0?autoplay=1" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>

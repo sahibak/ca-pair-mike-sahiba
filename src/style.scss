@@ -1,11 +1,23 @@
 .default-class {
     border: 1px pink solid;
+    height: 150px;
+    width: 150px;
 }
 
 .class-O {
     background-color: red;
+    height: 150px;
+    width: 150px;
 }
 
 .X-class {
     background-color: blue;
+    height: 150px;
+    width: 150px;
+}
+
+.game {
+    position: absolute;
+    top: 22%;
+    left: 26%;
 }

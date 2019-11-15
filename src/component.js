@@ -32,6 +32,44 @@ export default class Game extends React.Component {
         }
     }
 
+    // winnerCheckFunc(){
+    //     let winningSolutions = [[0,1,2],[3,4,5],[6,7,8],[0,3,6],[1,4,7],[2,5,8],[0,4,8],[2,4,6]]
+    //     let listOfValues = this.state.values;
+    //     for (let i=0; i < winningSolutions.length; i++) {
+    //             const [a,b,c] = winningSolutions[i];
+    //             let valmatch1 = (listOfValues[a] == listOfValues[b] && listOfValues[a] && listOfValues[b])
+    //             let valmatch2 = (listOfValues[b] == listOfValues[c] && listOfValues[b] && listOfValues[c])
+    //             let result = (valmatch1 == valmatch2 && valmatch1 && valmatch2)
+    //             if (result) {
+    //                 alert("We have a WINNER!")
+    //                 return
+    //             } 
+    //             else if(this.state.counter == 9 ){
+    //                 alert("Match is Tied!")
+    //                 return
+    //             }
+    //     }
+    // }
+   
+    componentDidUpdate(){
+        let winningSolutions = [[0,1,2],[3,4,5],[6,7,8],[0,3,6],[1,4,7],[2,5,8],[0,4,8],[2,4,6]]
+        let listOfValues = this.state.values;
+        for (let i=0; i < winningSolutions.length; i++) {
+                const [a,b,c] = winningSolutions[i];
+                let valmatch1 = (listOfValues[a] == listOfValues[b] && listOfValues[a] && listOfValues[b])
+                let valmatch2 = (listOfValues[b] == listOfValues[c] && listOfValues[b] && listOfValues[c])
+                let result = (valmatch1 == valmatch2 && valmatch1 && valmatch2)
+                if (result) {
+                    alert("We have a WINNER!")
+                    return
+                } 
+                else if(this.state.counter == 9 ){
+                    alert("Match is Tied!")
+                    return
+                }
+        }
+    }
+
     render(){
         return(
             <>

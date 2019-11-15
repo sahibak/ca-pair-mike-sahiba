@@ -35,13 +35,32 @@ export default class Game extends React.Component {
     render(){
         return(
             <>
-            <button onClick={(e)=> this.submitFunc(e, 0)} className = {this.displayFunc(0)}
-            >test1</button>
-            <button onClick={(e)=> this.submitFunc(e, 1)} className = {this.displayFunc(1)}
-            >test2</button>
-            <button name = "Q1" onClick={(e)=> this.submitFunc(e, 2)} className = {this.displayFunc(2)}
-            >test3</button>
-            <button name = "Q1" onClick={(e)=> this.submitFunc(e, 3)} className = {this.displayFunc(4)}>test3</button>
+            <div className="game">
+                <div className="box-row">
+                    <button onClick={(e)=> this.submitFunc(e, 0)} className = {this.displayFunc(0)}
+                    >test1</button>
+                    <button onClick={(e)=> this.submitFunc(e, 1)} className = {this.displayFunc(1)}
+                    >test2</button>
+                    <button name = "Q1" onClick={(e)=> this.submitFunc(e, 2)} className = {this.displayFunc(2)}
+                    >test3</button>
+                </div>
+                <div className="box-row">
+                    <button onClick={(e)=> this.submitFunc(e, 3)} className = {this.displayFunc(3)}
+                    >test4</button>
+                    <button onClick={(e)=> this.submitFunc(e, 4)} className = {this.displayFunc(4)}
+                    >test5</button>
+                    <button name = "Q1" onClick={(e)=> this.submitFunc(e, 5)} className = {this.displayFunc(5)}
+                    >test6</button>
+                </div>
+                <div className="box-row">
+                    <button onClick={(e)=> this.submitFunc(e, 6)} className = {this.displayFunc(6)}
+                    >test7</button>
+                    <button onClick={(e)=> this.submitFunc(e, 7)} className = {this.displayFunc(7)}
+                    >test8</button>
+                    <button name = "Q1" onClick={(e)=> this.submitFunc(e, 8)} className = {this.displayFunc(8)}
+                    >test9</button>
+                </div>
+            </div>
           </>
         )
     }

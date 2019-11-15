@@ -41,6 +41,7 @@ export default class Game extends React.Component {
             let valmatch1 = (listOfValues[a] == listOfValues[b] && listOfValues[a] && listOfValues[b])
             let valmatch2 = (listOfValues[b] == listOfValues[c] && listOfValues[b] && listOfValues[c])
             let result = (valmatch1 == valmatch2 && valmatch1 && valmatch2);
+            console.log(result)
             if (result) {
                 setTimeout(()=> {
                     alert("We have a WINNER!");
@@ -51,7 +52,7 @@ export default class Game extends React.Component {
                     }
                 },200);
             } 
-            else if(this.state.counter == 9 ){
+            else if(this.state.counter === 9){
                 setTimeout(()=>alert("It is a DRAW!"),200);
                 return
             }

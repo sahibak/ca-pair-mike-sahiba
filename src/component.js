@@ -6,7 +6,8 @@ export default class Game extends React.Component {
        values: [,,,,,,,,],
        counter: 0,
        nextStep: true,
-       result: false
+       result: false,
+       button: true, 
    } 
   
 
@@ -63,14 +64,24 @@ export default class Game extends React.Component {
             let result = (valmatch1 == valmatch2 && valmatch1 && valmatch2);
             console.log(result)
             if (result) {
+                // this.setState ({
+                //     button: true
+                // })
                 setTimeout(()=>alert("We have a WINNER!"),200);
-                return
+                return 
             } 
             else if(this.state.counter === 9){
+                // this.setState ({
+                //     button: true
+                // })
                 setTimeout(()=>alert("It is a DRAW!"),200);
-                return
+                return 
             }
         }
+    }
+
+    refreshPage() {
+        window.location.reload ()
     }
 
     render(){
@@ -89,7 +100,6 @@ export default class Game extends React.Component {
         return(
             <>
             <h1 className="title">Tick-Tack-Toe</h1>
-           <div></div>
             <div className="game">
                 <div className="box-row">
                     <button onClick={(e)=> this.submitFunc(e, 0)} className = {this.displayFunc(0)}
@@ -115,6 +125,11 @@ export default class Game extends React.Component {
                     <button name = "Q1" onClick={(e)=> this.submitFunc(e, 8)} className = {this.displayFunc(8)}
                     ></button>
                 </div>
+            </div>
+            <div>
+                {
+                    this.state.button ? <button className="not-hidden" onClick={()=>this.refreshPage()}>Refresh Board!</button> : null
+                }
             </div>
           </>
         )
